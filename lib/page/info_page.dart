@@ -27,16 +27,37 @@ class _InfoPageState extends State<InfoPage> {
             padding: const EdgeInsets.only(right: 20, left: 20),
             child: Center(
               child: Container(
-                height: 600,
+                height: 670,
                 decoration: BoxDecoration(
                     border: Border.all(color: Colors.black, width: 1),
                     borderRadius: BorderRadius.circular(30),
                     color: ColorConfig.grey),
                 child: Column(
                   children: [
-                    Text(
-                      "INFO",
-                      style: TextStyle(fontFamily: 'Iceberg', fontSize: 40),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, '/home');
+                          },
+                          child: Image.asset(
+                            AssetConfig.back,
+                            height: 47,
+                            width: 64,
+                          ),
+                        ),
+                        Container(
+                          width: 50,
+                        ),
+                        Text(
+                          "INFO",
+                          style: TextStyle(fontFamily: 'Iceberg', fontSize: 40),
+                        ),
+                        Container(
+                          width: 120,
+                        ),
+                      ],
                     ),
                     Padding(
                       padding: const EdgeInsets.all(15.0),
@@ -77,7 +98,7 @@ class _InfoPageState extends State<InfoPage> {
                             width: 40,
                             height: 40,
                           ),
-                          Padding(
+                          const Padding(
                             padding: const EdgeInsets.only(left: 10),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,

@@ -77,6 +77,5 @@ class TanamanController extends GetxController {
         colorText: Colors.white,
       );
     });
-    ;
   }
 }

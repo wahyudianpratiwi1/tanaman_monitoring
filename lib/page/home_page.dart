@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:monitoring_mobile/config/asset_config.dart';
 import 'package:monitoring_mobile/config/color_config.dart';
 import 'package:monitoring_mobile/controller/tanaman_controller.dart';
-import 'package:monitoring_mobile/widget/button_custom.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -30,13 +29,23 @@ class _HomeState extends State<Home> {
               width: 600,
               fit: BoxFit.fill,
             ),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/awal');
+              },
+              child: Image.asset(
+                AssetConfig.back,
+                height: 47,
+                width: 64,
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.all(30.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Center(
+                  const Center(
                     child: Text(
                       'SMART GARDEN',
                       style: TextStyle(
@@ -45,8 +54,8 @@ class _HomeState extends State<Home> {
                           color: ColorConfig.green),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 30),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 30),
                     child: Text(
                       'PILIH MODE PENGGUNAAN',
                       style: TextStyle(
@@ -61,7 +70,7 @@ class _HomeState extends State<Home> {
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5),
                           color: ColorConfig.black),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           'Auto',
                           style: TextStyle(
@@ -78,7 +87,7 @@ class _HomeState extends State<Home> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(5),
                               color: Colors.white),
-                          child: Center(
+                          child: const Center(
                             child: Text(
                               'Manual',
                               style: TextStyle(
@@ -102,15 +111,16 @@ class _HomeState extends State<Home> {
                             tanamanController.updateManual(lampuValue);
                           },
                           activeColor: Colors.green,
-                          inactiveThumbColor: Colors.red,
+                          inactiveThumbColor:
+                              const Color.fromARGB(255, 238, 132, 125),
                           inactiveTrackColor: Colors.red,
                         ),
                       );
                     })),
                   ),
-                  Center(
+                  const Center(
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 30),
+                      padding: EdgeInsets.only(top: 30),
                       child: Text(
                         'Kelembaban Tanah',
                         style: TextStyle(
@@ -120,8 +130,8 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 20),
                     child: Text(
                       'Sensor Soil Moisture',
                       style: TextStyle(
@@ -145,7 +155,7 @@ class _HomeState extends State<Home> {
                           child: Text(
                             "${tanamanController.tanamanData.value.moisture}%",
                             textAlign: TextAlign.center,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontFamily: 'Timmana',
                                 fontSize: 40,
                                 color: Colors.white),
@@ -154,7 +164,7 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                   ),
-                  Center(
+                  const Center(
                     child: Padding(
                       padding: const EdgeInsets.only(top: 40),
                       child: Text(
@@ -166,8 +176,8 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 20),
                     child: Text(
                       'Sensor DS18B20 Waterproof',
                       style: TextStyle(
@@ -196,7 +206,7 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                   ),
-                  Center(
+                  const Center(
                     child: Padding(
                       padding: const EdgeInsets.only(top: 20),
                       child: Text(
@@ -226,7 +236,8 @@ class _HomeState extends State<Home> {
                                 tanamanController.updateLampu(lampuValue);
                               },
                               activeColor: Colors.green,
-                              inactiveThumbColor: Colors.red,
+                              inactiveThumbColor:
+                                  const Color.fromARGB(255, 238, 132, 125),
                               inactiveTrackColor: Colors.red,
                             ),
                           );
@@ -248,7 +259,7 @@ class _HomeState extends State<Home> {
                           onTap: () {
                             Navigator.pushNamed(context, '/info');
                           },
-                          child: Text(
+                          child: const Text(
                             'Manual Book',
                             style: TextStyle(
                                 fontFamily: 'Iceberg',

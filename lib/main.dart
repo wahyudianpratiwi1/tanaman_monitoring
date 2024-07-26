@@ -4,6 +4,7 @@ import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:monitoring_mobile/config/color_config.dart';
 import 'package:monitoring_mobile/firebase_options.dart';
+import 'package:monitoring_mobile/page/awal_page.dart';
 import 'package:monitoring_mobile/page/home_page.dart';
 import 'package:monitoring_mobile/page/info_page.dart';
 import 'package:monitoring_mobile/page/intro_page.dart';
@@ -25,12 +26,13 @@ class MyApp extends StatelessWidget {
       home: const Intro(),
       theme: ThemeData(
           textTheme: GoogleFonts.poppinsTextTheme(),
-          primaryColor: ColorConfig.primary,
+          primaryColor: ColorConfig.grey,
           colorScheme: const ColorScheme.light(
               primary: ColorConfig.primary, secondary: ColorConfig.secondary)),
       routes: {
         '/home': (context) => const Home(),
-        '/info': (context) => const InfoPage()
+        '/info': (context) => const InfoPage(),
+        '/awal': (context) => const AwalPage()
       },
     );
   }
